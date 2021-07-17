@@ -14,6 +14,7 @@ export default function Home({theme}) {
             </Head>
             <Jumbotron/>
             <RandomQuotes/>
+            <RandomQuotes/>
            
           </div>  
   )

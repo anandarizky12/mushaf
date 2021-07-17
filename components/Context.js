@@ -5,6 +5,13 @@ import axios from 'axios';
 const AppContext= createContext();
 
 const AppProvider=({children})=>{
+  
+  //sidenav
+  const [sideNav, setSideNav] = useState('false');
+
+  const toggleSideNav = () => {
+    setSideNav(!sideNav);
+  }
   //Untuk Get Random Quotes
   const [randomQuotes, setRandomQuotes] = useState('');
 
@@ -34,7 +41,7 @@ const AppProvider=({children})=>{
 
 
     return (
-        <AppContext.Provider value={{ getRandomQuotes, randomQuotes, getSurah , surah, setsurah}}>
+        <AppContext.Provider value={{ getRandomQuotes, randomQuotes, getSurah , surah, setsurah,  toggleSideNav, sideNav}}>
                 {children}
         </AppContext.Provider>
     )

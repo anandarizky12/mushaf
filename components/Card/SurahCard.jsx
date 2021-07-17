@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 
-function SurahCard({    shortAr, name, ayatL, indName, number}) {
+function SurahCard({ shortAr, name, ayatL, indName, number}) {
     return (
     <Link href={`/surah/${number}`}>
         <div className="cursor-pointer hover:bg-red-500 border-2 border-gray-200 p-2 w-52 flex flex-row ">

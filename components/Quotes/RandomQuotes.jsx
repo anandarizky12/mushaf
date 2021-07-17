@@ -10,7 +10,7 @@ function RandomQuotes() {
 
     if(!randomQuotes.text_id) return <CardRandomSkeleton/>
     return (
-    <div className="randomCard w-full items-center flex justify-center h-72 shadow-sm my-12">
+    <div className="randomCard w-full items-center flex justify-start h-72 shadow-sm my-2">
             <div className="bg-quran-bg w-3/6 h-full bg-center bg-cover"/>
             <div className="ml-5">
                     <p className="font-bold text-2xl my-5">Random Quotes</p>

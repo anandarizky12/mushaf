@@ -33,6 +33,8 @@ export const GlobalStyles = createGlobalStyle`
   .randomCard{
     background-color: ${(props) => props.theme.jumbotron };
 
+  }.sidenav{
+    background-color: ${(props) => props.theme.jumbotron };
   }
 `;
 
