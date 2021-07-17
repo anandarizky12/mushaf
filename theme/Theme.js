@@ -3,14 +3,16 @@ import styled  from "styled-components";
 
 export const lightTheme = {
   body: "#fff",
-  nav : "#23CE6B",
-  fontColor: "#000",
+  nav : "#CDF3A2",
+  fontColor: "#595260",
+  jumbotron : "#CDF3A2"
 };
 
 export const darkTheme = {
   body: "#50514F",
   nav : "#272d2d",
   fontColor: "#fff",
+  jumbotron : "#272d2d"
 };
 
 
@@ -23,6 +25,14 @@ export const GlobalStyles = createGlobalStyle`
   .navbar{
     background-color: ${(props) => props.theme.nav  };
     color: ${(props) => props.theme.fontColor};
+  }
+  .jumbotron{
+    background-color: ${(props) => props.theme.jumbotron };
+
+  }
+  .randomCard{
+    background-color: ${(props) => props.theme.jumbotron };
+
   }
 `;
 

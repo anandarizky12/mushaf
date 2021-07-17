@@ -1,8 +1,10 @@
 import React from 'react'
 import Navbar from "./Navbar";
+import {UseGlobalContext} from '../Context';
 
+function Layout({children, theme, toggleTheme}) {
 
-function Layout({ toggleTheme, theme,children}) {
+    console.log(theme)
     return (
         <div className='layout'>
             <Navbar  theme={theme} toggleTheme={toggleTheme}  />

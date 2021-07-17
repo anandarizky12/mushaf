@@ -25,6 +25,9 @@ a {
  
   
 }
+input{
+  background-color: rgba(0, 0, 0, 0);
+}
 .navbar{
   position: fixed;
   padding-left: 15px;

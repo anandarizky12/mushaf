@@ -1,33 +1,40 @@
-import React,{useState,useEffect, useContext,createContext} from 'react';
+import React, { useState, useEffect, useContext,  createContext } from 'react';
+import axios from 'axios';
 
 
 const AppContext= createContext();
 
 const AppProvider=({children})=>{
-  //state here
-  const useDarkMode = () => {
-    const [ theme, setTheme ] = useState('dark');
-  
-    const setMode = mode => {
-      window.localStorage.setItem('theme', mode);
-      setTheme(mode);
-    }
-  
-    const toggleTheme = () => {
-      theme === 'dark' ? setMode('light') : setMode('dark');
-    }
-  
-    useEffect(() => {
-      const localTheme = window.localStorage.getItem('theme');
-      localTheme ? setTheme(localTheme) : setMode('dark');
-    }, []);
+  //Untuk Get Random Quotes
+  const [randomQuotes, setRandomQuotes] = useState('');
 
-  
-    return [ theme, toggleTheme ];
+  const getRandomQuotes=()=>{
+      axios.get('https://islamic-api-indonesia.herokuapp.com/api/data/quotes')
+        .then(res=>{
+          setRandomQuotes(res.data.result) 
+        });
   }
 
+
+  //end
+  //get Surah Al quran 
+
+  const [surah, setsurah] = useState([]);
+  const getSurah = () => {
+    axios.get("https://islamic-api-indonesia.herokuapp.com/api/data/json/quran")
+      .then(res=>{
+        setsurah(res);
+      })
+  }
+
+  useEffect(()=>{
+    getRandomQuotes();
+    getSurah();
+  },[]);
+
+
     return (
-        <AppContext.Provider value={{useDarkMode}} >
+        <AppContext.Provider value={{ getRandomQuotes, randomQuotes, getSurah , surah, setsurah}}>
                 {children}
         </AppContext.Provider>
     )
