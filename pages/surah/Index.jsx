@@ -1,26 +1,31 @@
 import React from 'react'
 import { UseGlobalContext } from '../../components/Context';
 import SurahCard from '../../components/Card/SurahCard';
-
+import SearchResult from './BoxSearch/SearchResult';
+import CardSurah from '../../components/Skeleton/CardSurah';
 
 function Surah() {
-    const {surah} = UseGlobalContext();
+    const {surah, cari, handleCari} = UseGlobalContext();
 
-    console.log(surah);
+    console.log(cari);
 
-   
     return (
         <div className="mt-12">
             <div className="bg-surah-bg w-full h-96 bg-center flex-col bg-cover flex justify-center items-center">
                 <p className="font-semibold text-gray-300 text-3xl">Cari Surah</p>
-                <div className="w-3/5 flex justify-center items-center mt-2">
-                    <input placeholder="Search Here"  type="text" className="pl-2 bg-gray-200 w-3/5 h-12"/>
-                    <button className="bg-red-600 h-12 px-5">Search</button>
-                </div>
+                <form className="w-4/5 flex justify-center items-center mt-2">
+                    <input placeholder="Search Here"  
+                           type="text"
+                           name="input"
+                           value={cari}
+                           onChange={(e)=>handleCari(e)} 
+                           className="pl-5 bg-gray-200 w-3/5 h-12 text-black"/>
+                </form>
+                    <SearchResult cari={cari}/>
             </div>
             <div className="flex items-center mt-8 flex-col">
                 <p className="text-2xl">Daftar Surah</p>
-                {(!surah.data) ? <p>Loading</p>
+                {(!surah.data) ? <CardSurah/>
                 :
                 <div className="flex justify-center flex-wrap mt-8">
                 {surah.data.result.data.map(data=>(

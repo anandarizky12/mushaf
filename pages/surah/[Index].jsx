@@ -11,7 +11,6 @@ function SurahDetail() {
     
     //get query of verses
     const query = router.query.Index;
-    if(!surah.data) return <p>Loaing</p>
     //get single element of verses
     let surahSingle  = {} ; 
     const getSurah = surah.data.result.data.filter(data=>{
@@ -20,8 +19,11 @@ function SurahDetail() {
     surahSingle = getSurah[0]
     //.......
     
-    console.log(surahSingle)
-    if(!getSurah[0]) return <CardSurah/>
+    
+    if(!surah.data) return <CardSurah/>
+    
+    // if(!getSurah[0]) return 
+ 
     return (
         <div className="mt-20 flex items-center justify-center">
             
@@ -32,7 +34,7 @@ function SurahDetail() {
                     <p className="text-xl mt-2 font-semibold">{surahSingle.name.transliteration.id}</p>
                     <p className="text-md ">({surahSingle.name.translation.id})</p>
                     <p className="text-sm font-thin"> {surahSingle.revelation.id} - {surahSingle.numberOfVerses} Ayat</p>
-                    {/* <p className="text-sm font-thin"> {surahSingle.tafsir.id}</p> */}
+            
 
                 </div>
               

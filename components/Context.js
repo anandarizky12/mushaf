@@ -6,8 +6,51 @@ const AppContext= createContext();
 
 const AppProvider=({children})=>{
   
+
+  //hanlde outside click 
+  const useOutsideClick = (ref, callback) => {
+    const handleClick = (e) => {
+      if (ref.current && !ref.current.contains(e.target)) {
+        callback();
+      }
+    };
+  
+    useEffect(() => {
+      document.addEventListener("click", handleClick);
+  
+      return () => {
+        document.removeEventListener("click", handleClick);
+      };
+    });
+  };
+  
+  //fungsi cari
+  const [cari, setcari] = useState('');
+  const [open, setopen ] = useState(false);
+  const ref = React.useRef();
+
+  useOutsideClick(ref, () => {
+    setopen(false);
+    setcari("");
+  });
+
+  function handleCari(e){
+    e.preventDefault();
+    setcari(e.target.value);
+  };
+
+
+  const filteredSurah = (surah) => {
+    if(cari){
+      setopen(true);
+      return surah.data.result.data.filter(verses=>{
+      return verses.name.transliteration.id.toLowerCase().includes(cari.toLowerCase())});
+    }
+  };
+
+
   //sidenav
-  const [sideNav, setSideNav] = useState('false');
+  const [sideNav, setSideNav] = useState('true');
 
   const toggleSideNav = () => {
     setSideNav(!sideNav);
@@ -34,6 +77,13 @@ const AppProvider=({children})=>{
       })
   }
 
+//   window.onkeydown = function(e){
+//     if(e.target.name.toLowerCase() === 'input'){
+//         return ;
+//     }
+//     alert('a');
+// };
+
   useEffect(()=>{
     getRandomQuotes();
     getSurah();
@@ -41,7 +91,9 @@ const AppProvider=({children})=>{
 
 
     return (
-        <AppContext.Provider value={{ getRandomQuotes, randomQuotes, getSurah , surah, setsurah,  toggleSideNav, sideNav}}>
+        <AppContext.Provider value={{ getRandomQuotes, randomQuotes, getSurah , 
+                                      surah, setsurah,  toggleSideNav, sideNav
+                                      , handleCari, cari, filteredSurah,setcari, open, ref }}>
                 {children}
         </AppContext.Provider>
     )

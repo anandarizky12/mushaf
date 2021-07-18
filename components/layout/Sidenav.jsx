@@ -4,7 +4,7 @@ import CloseIcon from '@material-ui/icons/Close';
 function Sidenav({ActiveLink, sideNav, toggle}) {
 
     return (
-    <div className={`${sideNav ? 'flex' : '-translate-x-full flex'} 
+    <div className={`${!sideNav ? 'flex' : '-translate-x-full flex'} 
         text-xl items-center flex-col absolute transform delay-150 transition-all left-0 w-screen 
         justify-around xl:hidden sidenav  top-0 h-screen`}>
      
