@@ -8,7 +8,6 @@ function SurahDetail() {
 
     const {surah } = UseGlobalContext();
     const router = useRouter();
-    
     //get query of verses
     const query = router.query.Index;
     //get single element of verses
@@ -22,8 +21,7 @@ function SurahDetail() {
     
     if(!surah.data) return <CardSurah/>
     
-    // if(!getSurah[0]) return 
- 
+    console.log(surahSingle);
     return (
         <div className="mt-20 flex items-center justify-center">
             

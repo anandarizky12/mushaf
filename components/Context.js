@@ -77,15 +77,18 @@ const AppProvider=({children})=>{
       })
   }
 
-//   window.onkeydown = function(e){
-//     if(e.target.name.toLowerCase() === 'input'){
-//         return ;
-//     }
-//     alert('a');
-// };
+  //get ayat kursi
+  const [ ayatKursi , setAyatKursi] = useState({})
+  const getAyatKursi = () =>{
+      axios.get('https://islamic-api-indonesia.herokuapp.com/api/data/json/ayatkursi')
+        .then(res=>{
+          setAyatKursi(res.data.result);
+        });
+  }
 
   useEffect(()=>{
     getRandomQuotes();
+    getAyatKursi();
     getSurah();
   },[]);
 
@@ -93,7 +96,8 @@ const AppProvider=({children})=>{
     return (
         <AppContext.Provider value={{ getRandomQuotes, randomQuotes, getSurah , 
                                       surah, setsurah,  toggleSideNav, sideNav
-                                      , handleCari, cari, filteredSurah,setcari, open, ref }}>
+                                      , handleCari, cari, filteredSurah,setcari, open, ref, 
+                                      ayatKursi}}>
                 {children}
         </AppContext.Provider>
     )

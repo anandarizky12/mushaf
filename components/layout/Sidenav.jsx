@@ -1,5 +1,6 @@
 import React from 'react';
 import CloseIcon from '@material-ui/icons/Close';
+import { List } from './List';
 
 function Sidenav({ActiveLink, sideNav, toggle}) {
 
@@ -11,14 +12,11 @@ function Sidenav({ActiveLink, sideNav, toggle}) {
         <CloseIcon onClick={toggle} className="absolute top-5 right-5" fontSize="large"/>
      
         <div onClick={toggle} className="h-3/5 items-center flex flex-col justify-around">
-            <ActiveLink activeClassName="font-bold text-red-400" href='/'>
-                <p className="cursor-pointer">Home</p>
-            </ActiveLink>
-            <ActiveLink activeClassName="font-bold text-red-400" href='/surah/Index'>
-                <p className="cursor-pointer">Surah</p>
-            </ActiveLink>
-            <p>Al-Qur'an</p>
-            <p>Jadwal Sholat</p>
+                {List.map(data=>(
+                    <ActiveLink activeClassName="font-bold text-red-400" href={data.link}>
+                        <p className="cursor-pointer">{data.nama}</p>
+                    </ActiveLink>
+                ))}
         </div>
     </div>
     )

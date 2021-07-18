@@ -7,19 +7,17 @@ import CardSurah from '../../components/Skeleton/CardSurah';
 function Surah() {
     const {surah, cari, handleCari} = UseGlobalContext();
 
-    console.log(cari);
-
     return (
         <div className="mt-12">
             <div className="bg-surah-bg w-full h-96 bg-center flex-col bg-cover flex justify-center items-center">
                 <p className="font-semibold text-gray-300 text-3xl">Cari Surah</p>
-                <form className="w-4/5 flex justify-center items-center mt-2">
+                <form className="w-4/5 flex justify-center items-center mt-4">
                     <input placeholder="Search Here"  
                            type="text"
                            name="input"
                            value={cari}
                            onChange={(e)=>handleCari(e)} 
-                           className="pl-5 bg-gray-200 w-3/5 h-12 text-black"/>
+                           className="pl-5 bg-gray-200 w-4/5 md:w-3/5 h-12 text-black"/>
                 </form>
                     <SearchResult cari={cari}/>
             </div>
@@ -44,4 +42,4 @@ function Surah() {
     )
 }
 
-export default Surah
+export default Surah;

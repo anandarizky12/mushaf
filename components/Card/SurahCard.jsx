@@ -4,7 +4,7 @@ import Link from 'next/link'
 function SurahCard({ shortAr, name, ayatL, indName, number}) {
     return (
     <Link href={`/surah/${number}`}>
-        <div className="cursor-pointer hover:bg-red-500 border-2 border-gray-200 p-2 w-52 flex flex-row ">
+        <div className="cursor-pointer hover:bg-red-500 border-2 m-1 border-gray-200 p-2 w-52 flex flex-row ">
             <div className="text-xs px-2">
                 {number}
             </div>
