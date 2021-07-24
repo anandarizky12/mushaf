@@ -13,7 +13,7 @@ export default function Home({theme}) {
                 <link rel="icon" href="/favicon.ico" />
               </Head>
               <Jumbotron/>
-              <RandomQuotes/>
+              {/* <RandomQuotes/> */}
     
           </div>  
   )
