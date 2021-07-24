@@ -1,10 +1,10 @@
-import React from 'react'
 import { UseGlobalContext } from '../../components/Context';
 import SurahCard from '../../components/Card/SurahCard';
 import SearchResult from './BoxSearch/SearchResult';
 import CardSurah from '../../components/Skeleton/CardSurah';
 
 function Surah() {
+
     const {surah, cari, handleCari} = UseGlobalContext();
 
     return (

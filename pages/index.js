@@ -1,7 +1,5 @@
 import Head from 'next/head';
 import Jumbotron from '../components/Jumbotron/Jumbotron';
-import RandomQuotes from '../components/Quotes/RandomQuotes';
-
 
 export default function Home({theme}) {
 
@@ -13,7 +11,7 @@ export default function Home({theme}) {
                 <link rel="icon" href="/favicon.ico" />
               </Head>
               <Jumbotron/>
-              {/* <RandomQuotes/> */}
+            
     
           </div>  
   )

@@ -9,8 +9,8 @@ function CardSurah() {
     return (
     <>
         {[1,2,3,4,5].map(index=>(
-            <Grid  key={index} className="w-full items-center flex justify-center h-48 ">
-                    <Skeleton  width="100%" height="80%"/>
+            <Grid  key={index} className="w-full mt-20 items-center flex justify-center h-48 ">
+                    <Skeleton  width="80%" height="80%"/>
             </Grid>
             ))}
     </>

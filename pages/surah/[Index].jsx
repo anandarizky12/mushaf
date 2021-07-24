@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react'
 import { useRouter } from "next/router";
 import { UseGlobalContext } from '../../components/Context';
 import CardSurah from '../../components/Skeleton/CardSurah';
@@ -8,6 +7,13 @@ function SurahDetail() {
 
     const {surah } = UseGlobalContext();
     const router = useRouter();
+   
+   
+   
+   
+    if(!surah.data) return <CardSurah/>
+   
+   
     //get query of verses
     const query = router.query.Index;
     //get single element of verses
@@ -18,10 +24,6 @@ function SurahDetail() {
     surahSingle = getSurah[0]
     //.......
     
-    
-    if(!surah.data) return <CardSurah/>
-    
-    console.log(surahSingle);
     return (
         <div className="mt-20 flex items-center justify-center">
             
@@ -51,4 +53,4 @@ function SurahDetail() {
     )
 }
 
-export default SurahDetail
+export default SurahDetail;
