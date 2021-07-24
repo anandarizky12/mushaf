@@ -1,14 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { UseGlobalContext } from '../Context';
 import CardRandomSkeleton from '../Skeleton/CardRandomSkeleton';
 
 function RandomQuotes() {
 
     const {randomQuotes} = UseGlobalContext();
-  
-    console.log(randomQuotes);
 
-    if(!randomQuotes.text_id) return <CardRandomSkeleton/>
+    console.log(randomQuotes);
+    
+    if(!randomQuotes) return <CardRandomSkeleton/>
     return (
     <div className="randomCard w-full items-center flex justify-start h-72 shadow-sm my-2">
             <div className="bg-quran-bg w-3/6 h-full bg-center bg-cover"/>

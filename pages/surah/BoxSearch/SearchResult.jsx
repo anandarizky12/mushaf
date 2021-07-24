@@ -7,10 +7,8 @@ import Divider from '@material-ui/core/Divider';
 function SearchResult({cari}) {
     
     const {surah, filteredSurah, open, ref} = UseGlobalContext();
-    const filter = filteredSurah(surah)
-
-    if(!surah.data) return <p>Loading . . .</p>
-
+    const filter = filteredSurah(surah);
+    
     return (
             <>
                 {open && filter &&

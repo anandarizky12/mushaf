@@ -13,7 +13,7 @@ function Navbar({theme, toggleTheme}) {
 
   
     return (
-        <div className="navbar py-5 px-5 shadow-md ">
+        <div className="navbar py-5 px-5 shadow-sm ">
             <h2 className="text-xl">Mushaf<span className="text-red-400 font-bold">.by</span></h2>
             <div className={`hidden w-1/4 justify-between xl:flex`}>
                 {List.map(data=>(

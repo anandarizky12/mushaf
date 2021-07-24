@@ -59,10 +59,14 @@ const AppProvider=({children})=>{
   const [randomQuotes, setRandomQuotes] = useState('');
 
   const getRandomQuotes=()=>{
+
       axios.get('https://islamic-api-indonesia.herokuapp.com/api/data/quotes')
-        .then(res=>{
-          setRandomQuotes(res.data.result) 
-        });
+          .then(res=>{
+            setRandomQuotes(res.data.result);
+          })
+
+  
+    
   }
 
 

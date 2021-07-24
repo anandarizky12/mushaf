@@ -8,14 +8,13 @@ export default function Home({theme}) {
 
   return (
           <div>
-            <Head>
-              <title>Mushaf Online</title>
-              <link rel="icon" href="/favicon.ico" />
-            </Head>
-            <Jumbotron/>
-            <RandomQuotes/>
-            <RandomQuotes/>
-           
+              <Head>
+                <title>Mushaf Online</title>
+                <link rel="icon" href="/favicon.ico" />
+              </Head>
+              <Jumbotron/>
+              <RandomQuotes/>
+    
           </div>  
   )
 }

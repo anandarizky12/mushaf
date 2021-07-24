@@ -4,9 +4,9 @@ import AyatKursiSkeleton from '../../components/Skeleton/AyatKursiSkeleton';
 
 
 function Doa() {
+  
     const {ayatKursi} = UseGlobalContext();
   
-    console.log(ayatKursi);
     if(!ayatKursi.data) return <AyatKursiSkeleton/>
     return (
         <div className="mt-28 mb-20 flex items-center justify-center ">

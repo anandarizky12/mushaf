@@ -10,9 +10,5 @@ export const List=[
     {
         nama : 'Ayat Kursi',
         link : '/doa/Index'
-    },
-    {
-        nama : 'Iqro',
-        link : '/jadwal'
-    },
+    }
 ]
